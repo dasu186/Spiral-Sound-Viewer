@@ -37,7 +37,7 @@ for frameInd = 1:nnz(rho >= 0)
 end
 
 [filepath, name, ext] = fileparts(filename);
-v = VideoWriter([name, ' (Spiral Viewer).avi', 'Uncompressed AVI']); 
+v = VideoWriter([name, ' (Spiral Viewer).avi'], 'Uncompressed AVI'); 
 v.FrameRate = round(1/dt);
 v.Quality = 100;
 open(v); writeVideo(v, frames); close(v);
