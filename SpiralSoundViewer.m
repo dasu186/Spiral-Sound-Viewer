@@ -26,7 +26,7 @@ c = round(stftMag(rho >= 0,:)./max(stftMag(rho >= 0,:), [], 1).*nC);
 
 tickLabels = {'', '', '' , '', '', ''};
 frames = struct('cdata', [], 'colormap', []);
-for frameInd = 1:nnz(rho >= 0)
+for frameInd = 1:size(stftMag, 2)
     polarscatter(theta(rho >= 0), rho(rho >= 0), sz, c(:,frameInd).', 'o', 'filled', 'MarkerFaceAlpha', .5);
     rlim([0, 10]); rticklabels(tickLabels);
     colorbar('TickLabels', tickLabels);
